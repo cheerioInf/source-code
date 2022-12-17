@@ -7,7 +7,60 @@
     <title>Document</title>
   </head>
   <body>
-    <script src="./Promise.js"></script>
-    <script></script>
+    <!-- <script src="./Promise2.js"></script> -->
+    <script>
+      // const getAge = function () {
+      //   return new Promise((resolve, reject) => {
+      //     resolve("2");
+      //   });
+      // };
+      // const getAge = new Promise((resolve, reject) => {
+      //   setTimeout(() => {
+      //     resolve("2");
+      //   });
+      // });
+
+      // const getNum = new Promise((resolve, reject) => {
+      //   reject("56");
+      // });
+
+      // const getname = Promise.race([getAge]);
+      // console.log(getname);
+
+      console.log("1");
+      setTimeout(function () {
+        console.log("2");
+        Promise.resolve().then(() => {
+          console.log("3");
+        });
+        new Promise(function (resolve) {
+          console.log("4");
+          resolve();
+        }).then(function () {
+          console.log("5");
+        });
+      });
+      Promise.resolve().then(() => {
+        console.log("6");
+      });
+      new Promise(function (resolve) {
+        console.log("7");
+        resolve();
+      }).then(function () {
+        console.log("8");
+      });
+      setTimeout(function () {
+        console.log("9");
+        Promise.resolve().then(() => {
+          console.log("10");
+        });
+        new Promise(function (resolve) {
+          console.log("11");
+          resolve();
+        }).then(function () {
+          console.log("12");
+        });
+      });
+    </script>
   </body>
 </html>
